@@ -8,7 +8,7 @@
     <xsl:output method="text" />
     <xsl:strip-space elements="*" />
     <xsl:template match="/nmaprun/host/ports/port[state/@state='open']">
-        <xsl:if test="service/@name='http' or service/@name='https' or service/@name='http-alt' or service/@name='http-proxy' or service/@name='soap' or service/@name='sip' or service/@name='rtsp' or service/@name='vnc-http'  or service/@name='caldav' or script/@id='http-methods'">
+        <xsl:if test="service/@name='http' or service/@name='https' or service/@name='http-alt' or service/@name='https-alt' or service/@name='http-proxy' or service/@name='soap' or service/@name='sip' or service/@name='rtsp' or service/@name='vnc-http'  or service/@name='caldav' or script/@id='http-methods'">
             <xsl:choose>
                 <xsl:when test="service/@tunnel='ssl' or script[@id='ssl-cert'] or script[@id='ssl-date']">
                     <xsl:text>https://</xsl:text>
